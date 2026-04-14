@@ -1,0 +1,74 @@
+import ollama
+
+MODEL = "llama3.2:3b"
+roles = {
+    "1": {
+        "name": "Python Tutor",
+        "prompt": "You are a patient and friendly Python tutor. Explain concepts clearly with examples."
+    },
+    "2": {
+        "name": "Fitness Coach",
+        "prompt": "You are a practical fitness coach. Give simple, actionable health and exercise advice."
+    },
+    "3": {
+        "name": "Travel Guide",
+        "prompt": "You are an enthusiastic travel guide. Suggest places, tips, and experiences."
+    }
+}
+def show_roles():
+    print("\nAvailable Roles:")
+    for key, role in roles.items():
+        print(f"{key}. {role['name']}")
+def choose_role():
+    while True:
+        show_roles()
+        choice = input("Pick a role (number): ").strip()
+        if choice in roles:
+            role = roles[choice]
+            print(f"\nRole set: {role['name']}")
+            return role
+        else:
+            print("Invalid choice. Try again.\n")
+def chat_loop():
+    current_role = choose_role()
+    messages = [
+        {"role": "system", "content": current_role["prompt"]}
+    ]
+
+    print("\nType your message (or 'switch' to change role, 'quit' to exit)\n")
+
+    while True:
+        user_input = input("You: ").strip()
+
+        if user_input.lower() == "quit":
+            print("Exiting chat. Bye!")
+            break
+
+        if user_input.lower() == "switch":
+            current_role = choose_role()
+            messages = [
+                {"role": "system", "content": current_role["prompt"]}
+            ]
+            print("\nSwitched role. Chat history reset.\n")
+            continue
+        messages.append({"role": "user", "content": user_input})
+
+        try:
+            response = ollama.chat(
+                model=MODEL,
+                messages=messages
+            )
+
+            assistant_reply = response["message"]["content"]
+
+            # Print response
+            print(f"{current_role['name']}: {assistant_reply}\n")
+
+            # Add assistant reply to history
+            messages.append({"role": "assistant", "content": assistant_reply})
+
+        except Exception as e:
+            print(f"Error: {e}\n")
+
+if _name_ == "_main_":
+    chat_loop()
