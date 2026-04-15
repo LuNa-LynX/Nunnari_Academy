@@ -153,3 +153,44 @@ if __name__ == "__main__":
 
     print("\nQwen Response:\n")
     print(answer)
+
+
+
+
+"""
+OUTPUT:
+
+Loaded 34 pages from PDFs
+Created 149 chunks
+Metadata attached successfully
+
+Available filenames:
+{'a._p._j._abdul_kalam.pdf', 'gopalswamy_doraiswamy_naidu.pdf'}
+
+Sample metadata:
+{'producer': 'Skia/PDF m145', 'creator': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.0.0 Safari/537.36', 'creationdate': '2026-03-09T06:40:02+00:00', 'title': 'Gopalswamy Doraiswamy Naidu - Wikipedia', 'moddate': '2026-03-09T06:40:02+00:00', 'source': 'C:\\Users\\Swathi Krishna\\Downloads\\Gopalswamy_Doraiswamy_Naidu.pdf', 'total_pages': 4, 'page': 0, 'page_label': '1', 'filename': 'gopalswamy_doraiswamy_naidu.pdf', 'page_number': 0, 'upload_date': '2026-04-15', 'source_type': 'paper'}
+
+Filtered chunks count: 13
+
+--- Chunk 1 ---
+Metadata: {'producer': 'Skia/PDF m145', 'creator': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.0.0 Safari/537.36', 'creationdate': '2026-03-09T06:40:02+00:00', 'title': 'Gopalswamy Doraiswamy Naidu - Wikipedia', 'moddate': '2026-03-09T06:40:02+00:00', 'source': 'C:\\Users\\Swathi Krishna\\Downloads\\Gopalswamy_Doraiswamy_Naidu.pdf', 'total_pages': 4, 'page': 0, 'page_label': '1', 'filename': 'gopalswamy_doraiswamy_naidu.pdf', 'page_number': 0, 'upload_date': '2026-04-15', 'source_type': 'paper'}
+Preview: Gopalaswamy Doraiswamy Naidu
+Gopalaswamy Doraiswamy Naidu
+Born 23 March 1893
+Kalangal, Coimbatore District,
+Madras Presidency, British India
+(now Tami
+
+--- Chunk 2 ---
+Metadata: {'producer': 'Skia/PDF m145', 'creator': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.0.0 Safari/537.36', 'creationdate': '2026-03-09T06:40:02+00:00', 'title': 'Gopalswamy Doraiswamy Naidu - Wikipedia', 'moddate': '2026-03-09T06:40:02+00:00', 'source': 'C:\\Users\\Swathi Krishna\\Downloads\\Gopalswamy_Doraiswamy_Naidu.pdf', 'total_pages': 4, 'page': 0, 'page_label': '1', 'filename': 'gopalswamy_doraiswamy_naidu.pdf', 'page_number': 0, 'upload_date': '2026-04-15', 'source_type': 'paper'}
+Preview: contributions were primarily industrial but also
+spanned the fields of electrical, mechanical,
+agricultural (hybrid cultivation) and automobile
+engine
+
+
+Qwen Response:
+
+This is an article about an Indian technical redesigner and industrial pioneer who transformed imported technologies into practical and affordable innovations for India. The article also mentions the importance of these innovations in modern Indian society and economic growth.
+
+"""
